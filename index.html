@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIVERA — The Operating System for Living Culture | West Bengal</title>
+  <meta name="description" content="LIVERA is the cultural technology platform connecting living heritage, traditional artisans, master practitioners, and the next generation. Preserving West Bengal's intangible culture.">
+  
+  <!-- Favicon icon representation -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23C85A32'/><text x='50%' y='68%' font-size='60' text-anchor='middle' fill='white' font-family='serif'>L</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement / Prototype Notice -->
+  <div class="announcement-bar" id="announcement-bar">
+    <strong>Startup Prototype MVP</strong>
+    <span>Demonstrating cultural technology for West Bengal, India. All content curated for editorial demonstration.</span>
+  </div>
+
+  <!-- Primary Sticky Header Navigation -->
+  <header class="app-header" id="app-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="#discover" class="brand-logo" data-view-nav="discover" title="LIVERA - Keep Culture Alive">
+        <div class="logo-symbol">L</div>
+        <div class="brand-text-block">
+          <span class="brand-name">LIVERA</span>
+          <span class="brand-subtitle">Living Culture OS</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation Menu -->
+      <nav class="main-nav" id="main-nav">
+        <a href="#discover" class="nav-link active" data-view="discover" data-view-nav="discover">Discover</a>
+        <a href="#archive" class="nav-link" data-view="archive" data-view-nav="archive">Living Archive</a>
+        <a href="#artisans" class="nav-link" data-view="artisans" data-view-nav="artisans">Artisans &amp; Masters</a>
+        <a href="#learn" class="nav-link" data-view="learn" data-view-nav="learn">Learn a Craft</a>
+        <a href="#map" class="nav-link" data-view="map" data-view-nav="map">Cultural Map</a>
+        <a href="#passport" class="nav-link" data-view="passport" data-view-nav="passport">Passport</a>
+        <a href="#community" class="nav-link" data-view="community" data-view-nav="community">Community</a>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- Global Search Trigger -->
+        <button class="btn-icon" id="btn-open-search" onclick="LIVERA.openGlobalSearchModal()" title="Global Search" aria-label="Search Living Culture">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <!-- Saved Bookmarks Drawer Trigger -->
+        <button class="btn-icon" id="btn-open-bookmarks" onclick="LIVERA.openBookmarksModal()" title="Saved Bookmarks" aria-label="Saved Heritage">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span class="badge-count" id="header-bookmark-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Primary CTA: Preserve a Story -->
+        <button class="btn btn-primary btn-sm" onclick="LIVERA.openStoryWizard()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <span>Preserve a Story</span>
+        </button>
+
+        <!-- Mobile Navigation Toggle -->
+        <button class="btn-icon mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       MAIN APPLICATION VIEWS (Single Page Architecture)
+       ======================================================================== -->
+  <main id="main-content">
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 1: DISCOVER / HOME
+         ---------------------------------------------------------------------- -->
+    <section id="view-discover" class="app-view active">
+      
+      <!-- HERO COMPOSITION -->
+      <div class="hero-section">
+        <div class="container hero-grid">
+          
+          <div class="hero-content">
+            <div class="hero-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              <span>The Living Heritage Operating System • West Bengal</span>
+            </div>
+
+            <h1 class="hero-headline">
+              Culture isn’t history. <br>
+              <span class="highlight">It’s alive.</span>
+            </h1>
+
+            <p class="hero-description">
+              Discover the stories, ancestral skills, and master practitioners carrying Bengal's living heritage into the future. Connect with authentic tradition bearers before living memory fades.
+            </p>
+
+            <div class="hero-ctas">
+              <button class="btn btn-primary btn-lg" onclick="LIVERA.navigateTo('archive')">
+                Explore Living Culture →
+              </button>
+              <button class="btn btn-outline btn-lg" onclick="LIVERA.openStoryWizard()">
+                Preserve a Story
+              </button>
+            </div>
+
+            <div class="hero-guarantee">
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Ethical Practitioner Attribution</span>
+              </div>
+              <div class="guarantee-item">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Provenance-Tracked Passports</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Montage -->
+          <div class="hero-visual">
+            <div class="hero-art-card">
+              <img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?auto=format&fit=crop&w=800&q=80" alt="Patachitra Artist of Pingla unrolling scroll painting">
+              <div class="hero-card-overlay">
+                <div class="hero-overlay-tag">Patachitra Traditions of Pingla</div>
+                <div class="hero-overlay-title">Singing the Scroll of the Forest Serpent</div>
+                <p class="hero-overlay-desc">Gurupada Chitrakar unrolls a 14-verse ballad made with natural marigold and soot pigments.</p>
+              </div>
+            </div>
+
+            <!-- Floating Badge Top -->
+            <div class="floating-badge badge-top">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" class="badge-avatar" alt="Subhadra Devi">
+              <div>
+                <div class="badge-info-title">Subhadra Devi Karmakar</div>
+                <div class="badge-info-sub">Kantha Stitch Virtuoso • Birbhum</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge Bottom -->
+            <div class="floating-badge badge-bottom">
+              <div style="background: var(--terracotta-light); width: 42px; height: 42px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; color: var(--terracotta-base);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <div>
+                <div class="badge-info-title">GI Tag Protected</div>
+                <div class="badge-info-sub">Panchmura Terracotta Steeds</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- IMPACT STRIP (Demo Metrics Bar) -->
+      <div class="impact-strip">
+        <div class="container">
+          <div class="impact-grid">
+            <div class="impact-item">
+              <div class="impact-number">1,240+</div>
+              <div class="impact-label">Stories Preserved</div>
+              <div class="impact-sub">Community Oral Archives</div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-number">186</div>
+              <div class="impact-label">Practitioners</div>
+              <div class="impact-sub">Master Artisans &amp; Bards</div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-number">42</div>
+              <div class="impact-label">Traditions</div>
+              <div class="impact-sub">Documented Across Bengal</div>
+            </div>
+            <div class="impact-item">
+              <div class="impact-number">3,800+</div>
+              <div class="impact-label">Learning Hours</div>
+              <div class="impact-sub">Cultural Apprenticeship</div>
+            </div>
+          </div>
+          <div class="demo-disclaimer-strip">
+            * Demonstration Metrics: Prototype demonstration data illustrating LIVERA's projected regional repository scale.
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURED CULTURAL EXPERIENCES -->
+      <section class="section-padding">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Living Heritage Discovery</span>
+            <h2>Featured Cultural Traditions</h2>
+            <p class="lead-text">
+              From the terracotta shrines of Bankura to the mystic baul songs of Kenduli, explore living lineages maintained across generations.
+            </p>
+          </div>
+
+          <div class="experiences-grid" id="featured-experiences-grid">
+            <!-- Dynamic JavaScript Content populated from LIVERA_DATA -->
+          </div>
+
+          <div style="text-align: center; margin-top: 3.5rem;">
+            <button class="btn btn-outline btn-lg" onclick="LIVERA.navigateTo('archive')">
+              View All 14 Traditions in Archive →
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURED EDITORIAL STORY -->
+      <section class="featured-story-section">
+        <div class="container">
+          <div class="story-grid">
+            <div class="story-image-wrap">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Gurupada Chitrakar">
+              <span class="story-badge">Master Practitioner Spotlight</span>
+            </div>
+            <div class="story-content">
+              <span class="section-tag gold" style="width: fit-content;">Oral Ballads of Pingla</span>
+              <h2 style="margin-bottom: 1rem;">“If you only paint the cloth, it is dead paper. When you sing, the painting breathes.”</h2>
+              <div class="story-quote">
+                The 38-year odyssey of Gurupada Chitrakar, keeping the Manasa Mangal scrolls alive through song in Paschim Medinipur.
+              </div>
+              <p class="story-narrative">
+                In Naya village, every child learns how to grind marigold petals with wood-apple resin before they learn to write. When the monsoon brings river floods, the Chitrakars do not just seek shelter; they sing ancient warnings of river serpents and ecological balance passed down across three centuries.
+              </p>
+
+              <div class="story-meta-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" class="story-avatar" alt="Gurupada Chitrakar">
+                <div>
+                  <div class="story-author-name">Gurupada Chitrakar</div>
+                  <div class="story-author-role">Master Patua &amp; Ballad Singer • Naya, Pingla</div>
+                </div>
+                <button class="btn btn-sm btn-gold" style="margin-left: auto;" onclick="LIVERA.openArtisanModal('art-01')">
+                  Read Profile
+                </button>
+              </div>
+
+              <div>
+                <button class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #FFF;" onclick="LIVERA.openArchiveModal('arc-05')">
+                  Explore Patachitra Scroll Tradition →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY LIVERA: THE 4 PILLARS -->
+      <section class="section-padding" style="background-color: var(--bg-surface-soft);">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">Systemic Cultural Architecture</span>
+            <h2>Why LIVERA? The 4 Core Pillars</h2>
+            <p class="lead-text">
+              Cultural knowledge disappears when left unrecorded; practitioners starve when divorced from modern discovery. LIVERA bridges preservation and sustainable cultural livelihoods.
+            </p>
+          </div>
+
+          <div class="why-livera-grid">
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+              </div>
+              <div class="value-pillar">Pillar 1</div>
+              <h3 class="value-title">PRESERVE</h3>
+              <p class="value-desc">
+                Digital encoding of vulnerable oral histories, songs, and indigenous techniques with contributor consent, rights attribution, and community ownership.
+              </p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              </div>
+              <div class="value-pillar">Pillar 2</div>
+              <h3 class="value-title">DISCOVER</h3>
+              <p class="value-desc">
+                Interactive geographic mapping and structured taxonomy of living traditions, enabling travelers, scholars, and youth to explore genuine culture.
+              </p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="value-pillar">Pillar 3</div>
+              <h3 class="value-title">CONNECT</h3>
+              <p class="value-desc">
+                Direct peer-to-peer apprenticeship pathways connecting verified master craftspeople with learners, institutions, and research fellows.
+              </p>
+            </div>
+
+            <div class="value-card">
+              <div class="value-icon-box">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              </div>
+              <div class="value-pillar">Pillar 4</div>
+              <h3 class="value-title">SUSTAIN</h3>
+              <p class="value-desc">
+                Cultural Passports with transparent provenance tracking, establishing fair compensation, intellectual protection, and institutional backing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOR INSTITUTIONS & BUSINESS MODEL STRIP -->
+      <section class="institution-strip">
+        <div class="container">
+          <div class="partner-box">
+            <div>
+              <span class="section-tag">Enterprise &amp; Institutional Outreach</span>
+              <h3>Partner with LIVERA: Sustainable Cultural Commerce</h3>
+              <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                LIVERA is designed as an institutional B2B and public-interest infrastructure layer for governments, universities, and ethical brands.
+              </p>
+
+              <div class="partner-audiences">
+                <div class="audience-pill">
+                  <strong>Museums &amp; Archives</strong>
+                  <span>Interactive exhibits &amp; oral history preservation</span>
+                </div>
+                <div class="audience-pill">
+                  <strong>Universities &amp; Schools</strong>
+                  <span>Living curriculum &amp; master workshops</span>
+                </div>
+                <div class="audience-pill">
+                  <strong>Heritage Tourism Boards</strong>
+                  <span>Authentic cultural mapping &amp; field discovery</span>
+                </div>
+                <div class="audience-pill">
+                  <strong>Ethical Brands &amp; Designers</strong>
+                  <span>Provenance-verified artisan collaborations</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="partner-monetization-card">
+              <h4>Future Revenue &amp; Business Model</h4>
+              <div class="revenue-stream-item">
+                <span class="stream-bullet">01.</span>
+                <span><strong>Institutional Subscriptions:</strong> Curated archival databases for academic research and cultural museums.</span>
+              </div>
+              <div class="revenue-stream-item">
+                <span class="stream-bullet">02.</span>
+                <span><strong>Educational Licensing:</strong> Apprenticeship modules and multimedia learning pathways for schools.</span>
+              </div>
+              <div class="revenue-stream-item">
+                <span class="stream-bullet">03.</span>
+                <span><strong>Cultural Passport Verification:</strong> Provenance certification services for authentic artisan exports.</span>
+              </div>
+              <div class="revenue-stream-item">
+                <span class="stream-bullet">04.</span>
+                <span><strong>Facilitation Commissions:</strong> Fair-trade booking fees for masterclasses, with full artisan consent.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 2: LIVING ARCHIVE (Cultural Knowledge Discovery)
+         ---------------------------------------------------------------------- -->
+    <section id="view-archive" class="app-view section-padding">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Open Cultural Repository</span>
+          <h2>The Bengal Living Archive</h2>
+          <p class="lead-text">
+            Search, filter, and discover documented living traditions across crafts, music, oral literature, rituals, and cuisine.
+          </p>
+        </div>
+
+        <!-- Archive Search & Filter Bar -->
+        <div class="archive-controls">
+          <div class="search-bar-wrap">
+            <svg class="search-icon-pos" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="archive-search-input" class="search-input" placeholder="Search by craft, title, Bengali script, or keyword (e.g. Kantha, Baul, Terracotta, Mask, Silk)...">
+          </div>
+
+          <div class="archive-filter-row">
+            <!-- Category Pills -->
+            <div class="filter-pills-group">
+              <button class="filter-pill active" data-category="all">All Categories</button>
+              <button class="filter-pill" data-category="Craft">Handicrafts</button>
+              <button class="filter-pill" data-category="Music">Mystic &amp; Folk Music</button>
+              <button class="filter-pill" data-category="Oral">Oral &amp; Visual</button>
+              <button class="filter-pill" data-category="Ritual">Ritual &amp; Dance</button>
+              <button class="filter-pill" data-category="Culinary">Culinary Heritage</button>
+            </div>
+
+            <!-- Region & Sort Dropdowns -->
+            <div class="filter-dropdowns">
+              <select id="archive-region-filter" class="select-custom" aria-label="Filter by District">
+                <option value="all">All Districts</option>
+                <option value="Birbhum">Birbhum</option>
+                <option value="Bankura">Bankura</option>
+                <option value="Purulia">Purulia</option>
+                <option value="Paschim Medinipur">Paschim Medinipur</option>
+                <option value="Cooch Behar">Cooch Behar</option>
+                <option value="Kolkata">Kolkata</option>
+                <option value="Malda">Malda</option>
+                <option value="South 24 Parganas">South 24 Parganas</option>
+              </select>
+
+              <select id="archive-sort-filter" class="select-custom" aria-label="Sort Archive">
+                <option value="featured">Featured First</option>
+                <option value="az">Alphabetical (A-Z)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="archive-stats-bar">
+          <span id="archive-count-label">Loading traditions...</span>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">💾 Saved items persist in local session</span>
+        </div>
+
+        <!-- Archive Grid -->
+        <div class="experiences-grid" id="archive-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 3: ARTISANS & MASTER PRACTITIONERS DIRECTORY
+         ---------------------------------------------------------------------- -->
+    <section id="view-artisans" class="app-view section-padding">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Human Heritage Bearers</span>
+          <h2>Master Artisans &amp; Practitioners</h2>
+          <p class="lead-text">
+            Connect directly with generational custodians of Bengal’s living memory. Discover their lineage, request interactive learning sessions, or arrange cultural apprenticeships.
+          </p>
+        </div>
+
+        <!-- Artisan Filter Controls -->
+        <div class="archive-controls" style="margin-bottom: 2.5rem;">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <div style="flex-grow: 1; position: relative;">
+              <svg class="search-icon-pos" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="artisan-search-input" class="search-input" placeholder="Search practitioners by name, craft, or village...">
+            </div>
+            <select id="artisan-craft-filter" class="select-custom" style="min-width: 200px;">
+              <option value="all">All Disciplines</option>
+              <option value="Visual">Visual &amp; Oral Storytelling</option>
+              <option value="Textiles">Textiles &amp; Embroidery</option>
+              <option value="Music">Music &amp; Acoustic Craft</option>
+              <option value="Ceramics">Ceramics &amp; Terracotta</option>
+              <option value="Mask">Masks &amp; Sculpting</option>
+              <option value="Metallurgy">Lost-Wax Metallurgy</option>
+              <option value="Eco-Weaving">Natural Fiber Weaving</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Directory Grid -->
+        <div class="artisan-grid" id="artisans-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 4: LEARN A CRAFT (Apprenticeship Pathways)
+         ---------------------------------------------------------------------- -->
+    <section id="view-learn" class="app-view section-padding">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Apprenticeship &amp; Transmission</span>
+          <h2>Learn a Living Craft</h2>
+          <p class="lead-text">
+            Immersive masterclasses co-designed with traditional practitioners. Step through interactive lessons, complete knowledge checks, and earn prototype apprentice badges.
+          </p>
+        </div>
+
+        <div class="pathways-grid" id="pathways-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Apprenticeship Ethics Notice -->
+        <div style="background: var(--bg-surface-soft); border-radius: var(--radius-lg); padding: 2rem; border-left: 4px solid var(--gold-accent); max-width: 860px; margin: 0 auto;">
+          <h4 style="color: var(--deep-indigo); margin-bottom: 0.5rem; font-family: var(--font-serif);">Educational Ethics &amp; Transmission Disclaimer</h4>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+            LIVERA’s learning pathways are designed for cultural appreciation, transmission of knowledge, and building respect for traditional practitioners. Completion of these modules does not confer master artisan accreditation or grant permission to commercialize sacred community designs without direct practitioner partnership.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 5: CULTURAL MAP (Regional Geography)
+         ---------------------------------------------------------------------- -->
+    <section id="view-map" class="app-view section-padding">
+      <div class="container">
+        
+        <div class="section-header">
+          <span class="section-tag">Geographic Heritage Explorer</span>
+          <h2>Interactive Cultural Map of Bengal</h2>
+          <p class="lead-text">
+            Click on regional heritage hubs across West Bengal to discover local crafts, master practitioners, oral traditions, and field landmarks.
+          </p>
+        </div>
+
+        <div class="map-layout-grid">
+          
+          <!-- Stylized Interactive Bengal Map -->
+          <div class="map-visual-container">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--terracotta-base); text-transform: uppercase;">Regional Focus: West Bengal</span>
+              <span style="font-size: 0.75rem; color: var(--text-muted);">Click any location marker</span>
+            </div>
+
+            <div class="map-svg-wrap">
+              <!-- Stylized Vector SVG Map with Pin Markers -->
+              <svg class="bengal-map-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <!-- Stylized Bengal Territory Polygon -->
+                <path d="M 50,5 
+                         C 65,8 70,20 62,30 
+                         C 68,38 72,50 68,65 
+                         C 74,75 70,88 64,96 
+                         C 52,94 40,86 35,78 
+                         C 28,72 20,68 22,54 
+                         C 25,40 32,30 40,22 
+                         Z" 
+                      fill="#EDE4D5" 
+                      stroke="#C85A32" 
+                      stroke-width="1.2" 
+                      stroke-dasharray="2,1" />
+
+                <!-- River Ganga / Bhagirathi Stylized Path -->
+                <path d="M 54,26 Q 52,45 60,68 T 64,92" 
+                      fill="none" 
+                      stroke="#A5BBD0" 
+                      stroke-width="1.5" 
+                      stroke-linecap="round" />
+
+                <!-- Location Pin 1: Murshidabad & Malda (x: 55, y: 32) -->
+                <g class="map-marker-pin" data-location="loc-murshidabad" onclick="LIVERA.selectMapLocation('loc-murshidabad')">
+                  <circle cx="55" cy="32" r="6" fill="rgba(200,90,50,0.3)" class="pin-pulse" />
+                  <circle cx="55" cy="32" r="3.5" fill="var(--terracotta-base)" stroke="#FFF" stroke-width="1.2" />
+                  <text x="58" y="32" font-size="3.2" font-family="var(--font-sans)" font-weight="700" fill="var(--deep-indigo)">Murshidabad</text>
+                </g>
+
+                <!-- Location Pin 2: Shantiniketan (x: 48, y: 44) -->
+                <g class="map-marker-pin" data-location="loc-shantiniketan" onclick="LIVERA.selectMapLocation('loc-shantiniketan')">
+                  <circle cx="48" cy="44" r="6" fill="rgba(200,90,50,0.3)" class="pin-pulse" />
+                  <circle cx="48" cy="44" r="3.5" fill="var(--terracotta-base)" stroke="#FFF" stroke-width="1.2" />
+                  <text x="51" y="44" font-size="3.2" font-family="var(--font-sans)" font-weight="700" fill="var(--deep-indigo)">Shantiniketan</text>
+                </g>
+
+                <!-- Location Pin 3: Bankura & Bikna (x: 38, y: 56) -->
+                <g class="map-marker-pin active" data-location="loc-bankura" onclick="LIVERA.selectMapLocation('loc-bankura')">
+                  <circle cx="38" cy="56" r="6" fill="rgba(200,90,50,0.3)" class="pin-pulse" />
+                  <circle cx="38" cy="56" r="3.5" fill="var(--terracotta-base)" stroke="#FFF" stroke-width="1.2" />
+                  <text x="23" y="56" font-size="3.2" font-family="var(--font-sans)" font-weight="700" fill="var(--deep-indigo)">Bankura</text>
+                </g>
+
+                <!-- Location Pin 4: Purulia & Charida (x: 26, y: 58) -->
+                <g class="map-marker-pin" data-location="loc-purulia" onclick="LIVERA.selectMapLocation('loc-purulia')">
+                  <circle cx="26" cy="58" r="6" fill="rgba(200,90,50,0.3)" class="pin-pulse" />
+                  <circle cx="26" cy="58" r="3.5" fill="var(--terracotta-base)" stroke="#FFF" stroke-width="1.2" />
+                  <text x="13" y="58" font-size="3.2" font-family="var(--font-sans)" font-weight="700" fill="var(--deep-indigo)">Purulia</text>
+                </g>
+
+                <!-- Location Pin 5: Bishnupur (x: 44, y: 60) -->
+                <g class="map-marker-pin" data-location="loc-bishnupur" onclick="LIVERA.selectMapLocation('loc-bishnupur')">
+                  <circle cx="44" cy="60" r="6" fill="rgba(200,90,50,0.3)" class="pin-pulse" />
+                  <circle cx="44" cy="60" r="3.5" fill="var(--terracotta-base)" stroke="#FFF" stroke-width="1.2" />
+                  <text x="47" y="61" font-size="3.2" font-family="var(--font-sans)" font-weight="700" fill="var(--deep-indigo)">Bishnupur</text>
+                </g>
+
+                <!-- Location Pin 6: Kolkata & Delta (x: 62, y: 72) -->
+                <g class="map-marker-pin" data-location="loc-kolkata" onclick="LIVERA.selectMapLocation('loc-kolkata')">
+                  <circle cx="62" cy="72" r="6" fill="rgba(200,90,50,0.3)" class="pin-pulse" />
+                  <circle cx="62" cy="72" r="3.5" fill="var(--terracotta-base)" stroke="#FFF" stroke-width="1.2" />
+                  <text x="65" y="73" font-size="3.2" font-family="var(--font-sans)" font-weight="700" fill="var(--deep-indigo)">Kolkata</text>
+                </g>
+              </svg>
+            </div>
+
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem; font-size: 0.75rem;">
+              <span class="mini-tag" style="cursor: pointer;" onclick="LIVERA.selectMapLocation('loc-bankura')">Bankura</span>
+              <span class="mini-tag" style="cursor: pointer;" onclick="LIVERA.selectMapLocation('loc-shantiniketan')">Shantiniketan</span>
+              <span class="mini-tag" style="cursor: pointer;" onclick="LIVERA.selectMapLocation('loc-bishnupur')">Bishnupur</span>
+              <span class="mini-tag" style="cursor: pointer;" onclick="LIVERA.selectMapLocation('loc-purulia')">Purulia</span>
+              <span class="mini-tag" style="cursor: pointer;" onclick="LIVERA.selectMapLocation('loc-kolkata')">Kolkata</span>
+              <span class="mini-tag" style="cursor: pointer;" onclick="LIVERA.selectMapLocation('loc-murshidabad')">Murshidabad</span>
+            </div>
+          </div>
+
+          <!-- Selected Location Detail Panel -->
+          <div class="map-location-sidebar" id="map-location-sidebar">
+            <!-- Populated by JavaScript selectMapLocation -->
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 6: CULTURAL PASSPORT & PROVENANCE
+         ---------------------------------------------------------------------- -->
+    <section id="view-passport" class="app-view section-padding">
+      <div class="container container-narrow">
+        
+        <div class="section-header">
+          <span class="section-tag">Authenticity &amp; Provenance Ledger</span>
+          <h2>Digital Cultural Passports</h2>
+          <p class="lead-text">
+            Demonstrating transparent provenance tracking for living cultural artifacts. Every passport registers materials, techniques, and community verification status.
+          </p>
+        </div>
+
+        <!-- Passport Lookup Bar -->
+        <div class="passport-search-card">
+          <h3>Verify Artifact or Craft Passport</h3>
+          <p style="font-size: 0.88rem; color: #CBD5E1;">
+            Enter a registered LIVERA Passport ID or select from our demonstration registry:
+          </p>
+          <form class="passport-lookup-row" onsubmit="LIVERA.handlePassportLookup(event)">
+            <input type="text" id="passport-lookup-input" class="passport-input" placeholder="e.g. LIV-BEN-0842" value="LIV-BEN-0842">
+            <button type="submit" class="btn btn-gold">Verify Passport</button>
+          </form>
+          <div class="sample-ids-row">
+            <span>Sample Demo Passports:</span>
+            <span class="sample-id-chip" onclick="LIVERA.renderPassportView('LIV-BEN-0842')">LIV-BEN-0842 (Kantha)</span>
+            <span class="sample-id-chip" onclick="LIVERA.renderPassportView('LIV-TER-1109')">LIV-TER-1109 (Terracotta)</span>
+            <span class="sample-id-chip" onclick="LIVERA.renderPassportView('LIV-PAT-3201')">LIV-PAT-3201 (Patachitra)</span>
+            <span class="sample-id-chip" onclick="LIVERA.renderPassportView('LIV-DOK-4590')">LIV-DOK-4590 (Dokra Owl)</span>
+          </div>
+        </div>
+
+        <!-- Rendered Passport Certificate Container -->
+        <div id="passport-document-container">
+          <!-- Populated by JavaScript renderPassportView -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VIEW 7: COMMUNITY CONTRIBUTION & STEWARDSHIP
+         ---------------------------------------------------------------------- -->
+    <section id="view-community" class="app-view section-padding">
+      <div class="container container-narrow">
+        
+        <div class="section-header">
+          <span class="section-tag">Grassroots Stewardship</span>
+          <h2>Community Cultural Registry</h2>
+          <p class="lead-text">
+            Culture lives in grandmother’s lullabies, village harvest songs, family recipes, and dialect expressions. Contribute your story with respectful attribution.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); border-radius: var(--radius-xl); padding: 2.5rem; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); margin-bottom: 3rem; text-align: center;">
+          <h3 style="margin-bottom: 0.8rem;">Have a story, song, or craft tradition to preserve?</h3>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 1.5rem auto; font-size: 0.95rem;">
+            Submit your community knowledge through our guided 4-step preservation workflow. All submissions receive a demo reference ID and are credited to your name or family lineage.
+          </p>
+          <button class="btn btn-primary btn-lg" onclick="LIVERA.openStoryWizard()">
+            Preserve a Story Now →
+          </button>
+        </div>
+
+        <!-- Community Submissions Stream -->
+        <div style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-size: 1.4rem;">Recent Community Contributions</h3>
+          <span style="font-size: 0.8rem; color: var(--text-muted);">Saved in local demo store</span>
+        </div>
+
+        <div id="community-submissions-list" style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <!-- Populated by JavaScript renderCommunityView -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       MODALS & WIZARDS
+       ======================================================================== -->
+
+  <!-- 1. PRESERVE A STORY 4-STEP WIZARD MODAL -->
+  <div class="modal-overlay" id="modal-preserve-story">
+    <div class="modal-window" style="max-width: 820px;">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      
+      <div style="padding: 2.5rem 2.5rem 1rem;">
+        <span class="section-tag">Primary Interactive Feature</span>
+        <h2 style="font-size: 1.8rem; color: var(--deep-indigo);">Preserve Living Cultural Knowledge</h2>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 0.2rem;">
+          Encode an oral history, song, craft technique, or family recipe into the living repository.
+        </p>
+
+        <!-- 4-Step Stepper Header -->
+        <div class="wizard-stepper" style="margin-top: 2rem;">
+          <div class="stepper-line"></div>
+          <div class="step-item active" id="step-marker-1">
+            <div class="step-circle">1</div>
+            <div class="step-label">Contributor</div>
+          </div>
+          <div class="step-item" id="step-marker-2">
+            <div class="step-circle">2</div>
+            <div class="step-label">Story</div>
+          </div>
+          <div class="step-item" id="step-marker-3">
+            <div class="step-circle">3</div>
+            <div class="step-label">Context &amp; Consent</div>
+          </div>
+          <div class="step-item" id="step-marker-4">
+            <div class="step-circle">4</div>
+            <div class="step-label">Review</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stepper Panes -->
+      <div style="padding: 0 2.5rem 2.5rem;">
+        
+        <!-- STEP 1: Contributor Details -->
+        <div class="wizard-step-pane active" id="wizard-pane-1">
+          <div class="form-group">
+            <label class="form-label">Contributor Full Name <span class="required">*</span></label>
+            <input type="text" id="wiz-contributor-name" class="form-input" placeholder="e.g. Sujoy Sen, Debolina Mukherjee" value="Priya Chakraborty">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Community or Village</label>
+              <input type="text" id="wiz-community" class="form-input" placeholder="e.g. Bolpur, Birbhum" value="Santiniketan">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Language</label>
+              <select id="wiz-language" class="form-select">
+                <option value="Bengali">Bengali (বাংলা)</option>
+                <option value="English">English</option>
+                <option value="Santhali">Santhali (Ol Chiki / Latin)</option>
+                <option value="Rajbanshi">Rajbanshi</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Cultural Category</label>
+            <select id="wiz-category" class="form-select">
+              <option value="Oral Story & Folklore">Oral Story &amp; Folklore</option>
+              <option value="Craft & Technique">Craft Technique &amp; Material Alchemy</option>
+              <option value="Traditional Song & Verse">Traditional Song &amp; Melodic Verse</option>
+              <option value="Culinary Heritage & Recipe">Culinary Heritage &amp; Traditional Recipe</option>
+              <option value="Regional Expression / Word">Regional Word, Idiom or Expression</option>
+            </select>
+          </div>
+          <div class="wizard-nav-buttons">
+            <div></div>
+            <button class="btn btn-primary" onclick="LIVERA.nextStoryWizardStep()">Continue to Story Details →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Story & Recording -->
+        <div class="wizard-step-pane" id="wizard-pane-2">
+          <div class="form-group">
+            <label class="form-label">Story / Tradition Title <span class="required">*</span></label>
+            <input type="text" id="wiz-title" class="form-input" placeholder="e.g. The Weaver's Knot of Nanoor" value="The Secret Bhorat Stitch of Nanoor Women">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Story Narrative or Technique Description <span class="required">*</span></label>
+            <textarea id="wiz-story-text" class="form-textarea" placeholder="Describe the tradition, its meaning, how it is performed, and its role in your family or village...">My great-aunt taught our family how to align the Bhorat running stitches so tightly that water cannot seep through the quilt. She used to unravel threads from her mother's wedding saree during the hot afternoons when the loom was silent. She told us that every colored thread carried the breath of the woman who spun it.</textarea>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Tradition or Technique Name</label>
+              <input type="text" id="wiz-tradition" class="form-input" placeholder="e.g. Sujni Kantha Basting" value="Matrilineal Kantha Quiltmaking">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Approximate Time Period</label>
+              <input type="text" id="wiz-time-period" class="form-input" placeholder="e.g. Early 20th Century, 1950s" value="Mid-20th Century">
+            </div>
+          </div>
+
+          <!-- Simulated Audio Recording -->
+          <div class="audio-record-simulation">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--deep-indigo); margin-bottom: 0.35rem;">
+              Attach Spoken Oral Recording (Prototype Simulation)
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 0.8rem;">
+              Capture the voice and cadence of the elder or practitioner.
+            </p>
+            <button type="button" class="btn btn-sm btn-outline-terracotta" id="btn-simulate-record">
+              🎙️ Record 30-Second Voice Sample
+            </button>
+          </div>
+
+          <div class="wizard-nav-buttons">
+            <button class="btn btn-outline" onclick="LIVERA.prevStoryWizardStep()">← Back</button>
+            <button class="btn btn-primary" onclick="LIVERA.nextStoryWizardStep()">Continue to Context &amp; Consent →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Context & Consent -->
+        <div class="wizard-step-pane" id="wizard-pane-3">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Region / District</label>
+              <select id="wiz-region" class="form-select">
+                <option value="Birbhum">Birbhum (Nanoor / Bolpur)</option>
+                <option value="Bankura">Bankura (Panchmura / Bishnupur)</option>
+                <option value="Purulia">Purulia (Charida / Ayodhya)</option>
+                <option value="Paschim Medinipur">Paschim Medinipur (Pingla / Naya)</option>
+                <option value="Cooch Behar">Cooch Behar</option>
+                <option value="Nadia">Nadia / Murshidabad</option>
+                <option value="Kolkata">Kolkata &amp; 24 Parganas</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Who taught or passed this down?</label>
+              <input type="text" id="wiz-passed-down" class="form-input" placeholder="e.g. Grandmother, Village Bard" value="Great-Aunt Snehalata (Nanoor)">
+            </div>
+          </div>
+
+          <div class="consent-checkbox-wrap">
+            <input type="checkbox" id="wiz-consent-checkbox" checked>
+            <label for="wiz-consent-checkbox" class="consent-label">
+              <strong>Cultural Stewardship &amp; Attribution Consent:</strong> I affirm that this submission is shared with community respect and elder permission. I understand that LIVERA documents knowledge for educational preservation with clear attribution, and that submission does not transfer copyright or scientific certification.
+            </label>
+          </div>
+
+          <div class="wizard-nav-buttons">
+            <button class="btn btn-outline" onclick="LIVERA.prevStoryWizardStep()">← Back</button>
+            <button class="btn btn-primary" onclick="LIVERA.nextStoryWizardStep()">Review Submission →</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Review & Submit -->
+        <div class="wizard-step-pane" id="wizard-pane-4">
+          <h4 style="font-family: var(--font-serif); color: var(--deep-indigo); margin-bottom: 0.8rem;">Review Submission Summary</h4>
+          <div id="wiz-review-container">
+            <!-- Populated by populateWizardReview -->
+          </div>
+
+          <div class="wizard-nav-buttons">
+            <button class="btn btn-outline" onclick="LIVERA.prevStoryWizardStep()">← Edit Details</button>
+            <button class="btn btn-primary btn-lg" onclick="LIVERA.submitStoryPreservation()">
+              Confirm &amp; Encode Story to Archive ✓
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. ARCHIVE ENTRY DETAIL MODAL -->
+  <div class="modal-overlay" id="modal-archive-detail">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div id="archive-modal-content">
+        <!-- Injected via openArchiveModal -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. ARTISAN DETAIL MODAL -->
+  <div class="modal-overlay" id="modal-artisan-detail">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div id="artisan-modal-content">
+        <!-- Injected via openArtisanModal -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. REQUEST A LEARNING SESSION MODAL -->
+  <div class="modal-overlay" id="modal-session-request">
+    <div class="modal-window" style="max-width: 600px;">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div style="padding: 2.5rem;">
+        <span class="section-tag">Apprenticeship Request</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--deep-indigo); margin: 0.2rem 0 0.8rem;">
+          Request a Learning Session
+        </h3>
+        <p style="color: var(--text-secondary); font-size: 0.88rem; margin-bottom: 1.5rem;">
+          Connect with traditional practitioners for virtual masterclasses, studio visits, or archival interviews.
+        </p>
+
+        <form id="form-session-request">
+          <div class="form-group">
+            <label class="form-label">Selected Master Practitioner</label>
+            <select id="request-practitioner-select" class="form-select">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label class="form-label">Your Name <span class="required">*</span></label>
+              <input type="text" id="request-name" class="form-input" placeholder="e.g. Ananya Das" value="Ananya Das" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Email / Phone <span class="required">*</span></label>
+              <input type="text" id="request-contact" class="form-input" placeholder="ananya@example.com" value="ananya.das@heritage.org" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Preferred Session Mode</label>
+            <select id="request-mode" class="form-select">
+              <option value="Virtual Workshop">Virtual Video Apprenticeship</option>
+              <option value="Studio Visit">Studio Visit &amp; In-Person Residency</option>
+              <option value="Academic Inquiry">Academic Research Interview</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message / Learning Intent</label>
+            <textarea id="request-message" class="form-textarea" placeholder="Introduce yourself and explain your learning goals...">I am a design researcher studying natural vegetable dyes and running stitches. I would love to learn how your collective prepares natural indigo and preserves heirloom quilts.</textarea>
+          </div>
+
+          <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            * Prototype Note: This workflow records an illustrative demo request stored in your browser session without contacting external parties.
+          </div>
+
+          <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+            <button type="button" class="btn btn-outline" onclick="LIVERA.closeModal()">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit Learning Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. REQUEST CONFIRMATION MODAL -->
+  <div class="modal-overlay" id="modal-request-confirmation">
+    <div class="modal-window" style="max-width: 500px; text-align: center;">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div style="padding: 3rem 2rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--moss-light); color: var(--forest-moss); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem auto;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--deep-indigo); margin-bottom: 0.5rem;">Request Registered!</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.2rem;">
+          Your request to learn with <strong id="confirmation-practitioner-name">Master Artisan</strong> has been logged in the LIVERA demonstration registry.
+        </p>
+        <div style="background: var(--bg-surface-soft); padding: 0.7rem; border-radius: var(--radius-sm); font-family: var(--font-mono); font-size: 0.95rem; font-weight: 700; color: var(--deep-indigo); margin-bottom: 1.5rem;">
+          Reference ID: <span id="confirmation-ref-id">REQ-LIV-0000</span>
+        </div>
+        <button class="btn btn-primary" onclick="LIVERA.closeModal()">Got it</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. LESSON PLAYER MODAL (Learn a Craft) -->
+  <div class="modal-overlay" id="modal-lesson-player">
+    <div class="modal-window" style="max-width: 960px;">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div class="lesson-player-modal">
+        <!-- Sidebar Navigation -->
+        <div class="lesson-sidebar">
+          <div class="sidebar-pathway-title" id="lesson-player-pathway-title">Pathway Lessons</div>
+          <div class="lesson-nav-list" id="lesson-player-nav">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+        <!-- Main Content & Quiz Pane -->
+        <div class="lesson-content-pane" id="lesson-player-content">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. GLOBAL SEARCH MODAL -->
+  <div class="modal-overlay" id="modal-global-search">
+    <div class="modal-window global-search-window">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div style="padding: 1.5rem 1.5rem 0.8rem; border-bottom: 1px solid var(--border-light);">
+        <div class="search-bar-wrap" style="margin-bottom: 0;">
+          <svg class="search-icon-pos" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="global-search-input" class="search-input" placeholder="Search living traditions, artisans, and pathways...">
+        </div>
+      </div>
+      <div class="search-results-list" id="global-search-results">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. SAVED BOOKMARKS MODAL -->
+  <div class="modal-overlay" id="modal-bookmarks">
+    <div class="modal-window" style="max-width: 640px;">
+      <button class="modal-close-btn" onclick="LIVERA.closeModal()" aria-label="Close Modal">✕</button>
+      <div style="padding: 2.5rem;">
+        <span class="section-tag">Saved Cultural Heritage</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--deep-indigo); margin-bottom: 1.5rem;">
+          Your Saved Traditions
+        </h3>
+        <div id="bookmarks-list-container">
+          <!-- Populated by openBookmarksModal -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="app-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <a href="#discover" class="brand-logo" data-view-nav="discover" style="margin-bottom: 1rem;">
+            <div class="logo-symbol">L</div>
+            <div class="brand-text-block">
+              <span class="brand-name" style="color: #FFF;">LIVERA</span>
+              <span class="brand-subtitle">Living Culture OS</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            The cultural technology platform designed to preserve, discover, authenticate, and transmit living heritage starting with West Bengal, India.
+          </p>
+          <div style="font-size: 0.8rem; color: var(--gold-accent); font-weight: 600;">
+            “Don’t just preserve culture. Keep it alive.”
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Platform Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#discover" class="footer-link" data-view-nav="discover">Discover Home</a></li>
+            <li><a href="#archive" class="footer-link" data-view-nav="archive">Living Archive (14 Traditions)</a></li>
+            <li><a href="#artisans" class="footer-link" data-view-nav="artisans">Master Practitioners</a></li>
+            <li><a href="#learn" class="footer-link" data-view-nav="learn">Apprenticeship Pathways</a></li>
+            <li><a href="#map" class="footer-link" data-view-nav="map">Interactive Cultural Map</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Features &amp; Stewardship</h4>
+          <ul class="footer-links">
+            <li><a href="#passport" class="footer-link" data-view-nav="passport">Cultural Passport Ledger</a></li>
+            <li><a href="#community" class="footer-link" data-view-nav="community">Community Stewardship</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.openStoryWizard()">Preserve a Story (Wizard)</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.openBookmarksModal()">Saved Bookmarks</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Regional Hubs</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.navigateTo('map'); LIVERA.selectMapLocation('loc-bankura');">Bankura &amp; Panchmura</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.navigateTo('map'); LIVERA.selectMapLocation('loc-shantiniketan');">Shantiniketan &amp; Nanoor</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.navigateTo('map'); LIVERA.selectMapLocation('loc-purulia');">Purulia &amp; Charida</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.navigateTo('map'); LIVERA.selectMapLocation('loc-bishnupur');">Bishnupur Malla Heritage</a></li>
+            <li><a href="javascript:void(0)" class="footer-link" onclick="LIVERA.navigateTo('map'); LIVERA.selectMapLocation('loc-kolkata');">Kolkata Archives</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 LIVERA Inc. Built for the Cultural Technology Startup Competition. West Bengal Living Heritage Pilot.
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+          <button class="demo-reset-btn" onclick="LIVERA.resetDemoData()">Reset Demo Prototype State</button>
+          <span>v1.0.0-mvp</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
